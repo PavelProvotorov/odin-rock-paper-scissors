@@ -1,7 +1,7 @@
 console.log("Script started...")
 
 const choice_list = ["rock", "paper", "scissors"]
-let player_choice = getRandomChoice()
+let player_choice = prompt("Please enter 'rock', 'paper' or 'scissors': ", getRandomChoice())
 let computer_choice = getRandomChoice()
 
 function getRandomChoice(){
@@ -9,7 +9,6 @@ function getRandomChoice(){
 };
 
 function playRound(option_a, option_b){
-    let result = ""
     if (option_a == option_b){
         return "Tie!"
     } else {
@@ -38,6 +37,4 @@ function playRound(option_a, option_b){
     }
 }
 
-console.log(player_choice)
-console.log(computer_choice)
-console.log(playRound(player_choice,computer_choice))
+alert("Player choice: " + player_choice +  "\nComputer choice: " + computer_choice + "\nResult: " + playRound(player_choice,computer_choice))
