@@ -5,7 +5,7 @@ let player_choice = ""
 let computer_choice = ""
 let player_score = 0
 let computer_score = 0
-let max_score = 5
+let max_score = 0
 
 function getPlayerChoice(){
     return prompt("Please enter 'rock', 'paper' or 'scissors': ")
@@ -81,5 +81,5 @@ while (player_score < max_score && computer_score < max_score){
 if (player_score == 5){
     alert("YOU WON :) \n\nREFRESH PAGE TO PLAY AGAIN")
 } else {
-    alert("YOU LOST :( \n\nREFRESH PAGE TO PLAY AGAIN")
+    //alert("YOU LOST :( \n\nREFRESH PAGE TO PLAY AGAIN")
 };
