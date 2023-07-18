@@ -3,8 +3,9 @@ html{
 }
 
 body{
+    /* Color */
     background-color: pink;
-
+    /* Other */
     display: flex;
     justify-content: center;
     align-content: center;
@@ -14,14 +15,19 @@ body{
 }
 
 .container-border{
+    /* Color */
     background-color: lavender;
-
-    border-radius: 12px;
+    /* Other */
+    border-radius: 24px;
     padding: 24px;
     margin: 0px;
 }
 
 .container{
+    /* Font */
+    font-size: 18px;
+    font-weight: bold;
+    /* Other */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -32,17 +38,28 @@ body{
 }
 
 button{
+    /* Color */
     background-color: peachpuff;
-
-    width: 100px;
-    height: 100px;
-    padding: 0;
+    /* Font */
+    font-size: 24px;
+    font-weight: bold;
+    /* Other */
+    border-radius: 24px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
     margin: 0;
 }
 
-.options{ 
-    background-color: lavender;
+button:hover{
+    /* Color */
+    background-color: lavenderblush;
+}
 
+.options{ 
+    /* Color */
+    background-color: lavender;
+    /* Other */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -53,15 +70,20 @@ button{
 }
 
 .text{
-    background-color: lavender;
-
+    /* Color */
+    background-color: lavenderblush;
+    /* Other */
     display: flex;
     align-content: center;
     justify-content: center;
+    border-radius: 24px;
+    margin: 24px 0 0 0;
+    padding: 24px;
 }
 
 .text > p {
+    /* Other */
     text-align: center;
     word-wrap: break-word;
-    max-width: 250px;
+    max-width: 360px;
 }
