@@ -1,5 +1,25 @@
 console.log("Script started...")
 
+// VARIABLES
+const BUTTON_ROCK = document.getElementById("rock")
+const BUTTON_PAPER = document.getElementById("paper")
+const BUTTON_SCISSORS = document.getElementById("scissors")
+const TEXT_OUTPUT = document.getElementById("output")
+
+
+// SIGNALS
+BUTTON_ROCK.onclick = (event) => {
+    TEXT_OUTPUT.textContent = "ROCK"
+};
+
+BUTTON_PAPER.onclick = (event) => {
+    TEXT_OUTPUT.textContent = "PAPER"
+};
+
+BUTTON_SCISSORS.onclick = (event) => {
+    TEXT_OUTPUT.textContent = "SCISSORS"
+};
+
 const choice_list = ["rock", "paper", "scissors"]
 let player_choice = ""
 let computer_choice = ""
