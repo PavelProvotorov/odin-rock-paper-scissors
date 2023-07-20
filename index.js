@@ -41,26 +41,29 @@ function playRound(option_a, option_b){
     if (player_score < max_score && computer_score < max_score){
         console.log(option_a)
         console.log(option_b)
-        compareOptions(option_a, option_b)
+        updateText(compareOptions(option_a, option_b))
     } else {
-        console.log("GAME OVER")
+        TEXT_OUTPUT.textContent = "REFRESH PAGE TO PLAY AGAIN!"
     }
 };
 
 function compareOptions(option_a, option_b){
     const outcome = option_a.beats.includes(option_b.name)
     if (option_a === option_b){
-        console.log("DRAW")
-        return
+        return "DRAW"
     } else if (outcome === true) {
-        console.log("PLAYER WON")
-        return
+        player_score++
+        return "PLAYER WON"
     } else if (outcome === false) {
-        console.log("COMPUTER WON")
-        return
+        computer_score++
+        return "COMPUTER WON"
     } else {
-        console.log("ERROR")
+        return "ERROR"
     };
+};
+
+function updateText(outcome){
+    TEXT_OUTPUT.textContent = player_choice.name + " VS " + computer_choice.name + "\n" + "\n" + outcome
 };
 
 function getRandomOption(){
