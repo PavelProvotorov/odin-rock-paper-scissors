@@ -5,6 +5,8 @@ const BUTTON_ROCK = document.getElementById("rock")
 const BUTTON_PAPER = document.getElementById("paper")
 const BUTTON_SCISSORS = document.getElementById("scissors")
 const TEXT_OUTPUT = document.getElementById("output")
+const DISPLAY_PLAYER_SCORE = document.getElementById("player_score")
+const DISPLAY_COMPUTER_SCORE = document.getElementById("computer_score")
 
 const ROCK = {
     name: "ROCK",
@@ -39,11 +41,11 @@ let max_score = 5
 // FUNCTIONS
 function playRound(option_a, option_b){
     if (player_score < max_score && computer_score < max_score){
-        console.log(option_a)
-        console.log(option_b)
         updateText(compareOptions(option_a, option_b))
     } else {
-        TEXT_OUTPUT.textContent = "REFRESH PAGE TO PLAY AGAIN!"
+        player_score = 0
+        computer_score = 0
+        updateText("RESTART")
     }
 };
 
@@ -63,7 +65,19 @@ function compareOptions(option_a, option_b){
 };
 
 function updateText(outcome){
-    TEXT_OUTPUT.textContent = player_choice.name + " VS " + computer_choice.name + "\n" + "\n" + outcome
+    DISPLAY_PLAYER_SCORE.textContent = player_score
+    DISPLAY_COMPUTER_SCORE.textContent = computer_score
+    
+    // PLAYER SCORE VICTORY
+    if (outcome === "RESTART"){
+        TEXT_OUTPUT.textContent = "CHOOSE YOUR OPTION"
+    } else if (player_score >= max_score){
+        TEXT_OUTPUT.textContent = outcome + " THIS GAME!" + "\n\nCLICK ANY OPTION TO PLAY AGAIN!"
+    } else if (computer_score >= max_score){ 
+        TEXT_OUTPUT.textContent = outcome + " THIS GAME!" + "\n\nCLICK ANY OPTION TO PLAY AGAIN"
+    } else {
+        TEXT_OUTPUT.textContent = player_choice.name + " VS " + computer_choice.name + "\n" + "\n" + outcome
+    }
 };
 
 function getRandomOption(){
