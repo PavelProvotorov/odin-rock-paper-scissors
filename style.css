@@ -1,8 +1,8 @@
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     /* Color */
     background-color: pink;
     /* Other */
@@ -14,19 +14,29 @@ body{
     margin: 0px;
 }
 
-.container-border{
+.container-deco {
+    /* Other */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container-border {
     /* Color */
     background-color: lavender;
     /* Other */
     box-shadow: 0 4px 2px -2px palevioletred;
-    border-radius: 24px;
+    border-radius: 0 0 24px 24px; 
     padding: 24px;
     margin: 0px;
 }
 
-.container{
+.container {
     /* Font */
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     /* Other */
     display: flex;
@@ -38,11 +48,11 @@ body{
     margin: 0px;
 }
 
-button{
+button {
     /* Color */
     background-color: lavenderblush;
     /* Font */
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     /* Other */
     border: 0;
@@ -53,12 +63,12 @@ button{
     margin: 0;
 }
 
-button:hover{
+button:hover {
     /* Color */
     background-color: pink;
 }
 
-.options{ 
+.options {
     /* Color */
     background-color: lavender;
     /* Other */
@@ -71,7 +81,7 @@ button:hover{
     gap: 12px;
 }
 
-.score{
+.score {
     /* Color */
     background-color: lavender;
     /* Other */
@@ -85,7 +95,7 @@ button:hover{
     height: 60px;
 }
 
-.score > div{
+.score > div {
     /* Color */
     background-color: lavenderblush;;
     /* Other */
@@ -98,23 +108,24 @@ button:hover{
     margin: 0;
 }
 
-#player-score{
+#player-score {
     flex-grow: 1;
     border-radius: 24px 0 0 24px;
     transition: flex-grow 0.5s;
 }
 
-#computer-score{
+#computer-score {
     flex-grow: 1;
     border-radius: 0 24px 24px 0;
     transition: flex-grow 0.5s;
 }
 
-.text{
+.text {
     /* Color */
     background-color: lavenderblush;
     /* Other */
     display: flex;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     border-radius: 24px;
@@ -128,11 +139,56 @@ button:hover{
     text-align: center;
     word-wrap: break-word;
     white-space: pre;
-    width: 360px;
 }
 
 #output{
     transition: opacity 1s;
+}
+
+
+/* DECORATIVE */
+.outer-left-triangle {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-bottom: 100px solid lavender;
+    border-radius: 0 24px 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-end;
+}
+
+.outer-right-triangle {
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid lavender;
+    border-radius: 24px 0 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.inner-left-triangle {
+    width: 0;
+    height: 0;
+    border-left: 70.7px solid transparent;
+    border-bottom: 70.7px solid pink;
+    border-radius: 24px;
+    margin: 35px 17.5px 0 0;
+}
+
+.inner-right-triangle {
+    width: 0;
+    height: 0;
+    border-right: 70.7px solid transparent;
+    border-bottom: 70.7px solid pink;
+    border-radius: 24px;
+    margin: 35px 0 0 17.5px;
 }
 
 /* ANIMATIONS */
