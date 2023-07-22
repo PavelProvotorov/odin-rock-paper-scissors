@@ -77,8 +77,9 @@ button:hover{
     /* Other */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
+    gap: 12px;
     padding: 0;
     margin: 0 0 24px 0;
     height: 60px;
@@ -93,10 +94,20 @@ button:hover{
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    border-radius: 24px;
     padding: 0;
     margin: 0;
-    width: 60px;
+}
+
+#player-score{
+    flex-grow: 1;
+    border-radius: 24px 0 0 24px;
+    transition: flex-grow 0.5s;
+}
+
+#computer-score{
+    flex-grow: 1;
+    border-radius: 0 24px 24px 0;
+    transition: flex-grow 0.5s;
 }
 
 .text{
@@ -118,4 +129,22 @@ button:hover{
     word-wrap: break-word;
     white-space: pre;
     width: 360px;
+}
+
+#output{
+    transition: opacity 1s;
+}
+
+/* ANIMATIONS */
+.animation-fadeOut{
+    animation: fadeOut 1s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

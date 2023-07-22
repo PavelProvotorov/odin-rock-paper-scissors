@@ -4,9 +4,9 @@ console.log("Script started...")
 const BUTTON_ROCK = document.getElementById("rock")
 const BUTTON_PAPER = document.getElementById("paper")
 const BUTTON_SCISSORS = document.getElementById("scissors")
-const TEXT_OUTPUT = document.getElementById("output")
-const DISPLAY_PLAYER_SCORE = document.getElementById("player_score")
-const DISPLAY_COMPUTER_SCORE = document.getElementById("computer_score")
+const DIV_TEXT_OUTPUT = document.getElementById("output")
+const DIV_PLAYER_SCORE = document.getElementById("player-score")
+const DIV_COMPUTER_SCORE = document.getElementById("computer-score")
 
 const ROCK = {
     name: "ROCK",
@@ -65,23 +65,36 @@ function compareOptions(option_a, option_b){
 };
 
 function updateText(outcome){
-    DISPLAY_PLAYER_SCORE.textContent = player_score
-    DISPLAY_COMPUTER_SCORE.textContent = computer_score
-    
-    // PLAYER SCORE VICTORY
+    DIV_PLAYER_SCORE.textContent = player_score
+    DIV_COMPUTER_SCORE.textContent = computer_score
+
+    DIV_PLAYER_SCORE.style.flexGrow = (player_score)+1
+    DIV_COMPUTER_SCORE.style.flexGrow = (computer_score)+1
+
+    playAnimation(DIV_TEXT_OUTPUT,"animation-fadeOut")
+
     if (outcome === "RESTART"){
-        TEXT_OUTPUT.textContent = "CHOOSE YOUR OPTION"
+        DIV_TEXT_OUTPUT.textContent = "CHOOSE YOUR OPTION"
     } else if (player_score >= max_score){
-        TEXT_OUTPUT.textContent = outcome + " THIS GAME!" + "\n\nCLICK ANY OPTION TO PLAY AGAIN!"
+        DIV_TEXT_OUTPUT.textContent = outcome + " THIS GAME!" + "\n\nCLICK ANY OPTION TO PLAY AGAIN"
     } else if (computer_score >= max_score){ 
-        TEXT_OUTPUT.textContent = outcome + " THIS GAME!" + "\n\nCLICK ANY OPTION TO PLAY AGAIN"
+        DIV_TEXT_OUTPUT.textContent = outcome + " THIS GAME!" + "\n\nCLICK ANY OPTION TO PLAY AGAIN"
     } else {
-        TEXT_OUTPUT.textContent = player_choice.name + " VS " + computer_choice.name + "\n" + "\n" + outcome
+        DIV_TEXT_OUTPUT.textContent = player_choice.name + " VS " + computer_choice.name + "\n" + "\n" + outcome
     }
 };
 
 function getRandomOption(){
     return OPTION_LIST[Math.floor(Math.random() * OPTION_LIST.length)]
+};
+
+function playAnimation(element,animation){
+    if (element.classList.contains(animation)){
+        element.classList.remove(animation)
+    };
+    requestAnimationFrame(() => {
+        element.classList.add(animation);
+    });
 };
 
 // SIGNALS
