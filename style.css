@@ -38,6 +38,7 @@ body {
     /* Font */
     font-size: 22px;
     font-weight: bold;
+    color: pink;
     /* Other */
     display: flex;
     flex-wrap: wrap;
@@ -66,6 +67,13 @@ button {
 button:hover {
     /* Color */
     background-color: pink;
+}
+
+button:active {
+    /* Color */
+    background-color: palevioletred;
+    /* Font */
+    font-size: 24px;
 }
 
 .options {
@@ -131,7 +139,7 @@ button:hover {
     border-radius: 24px;
     margin: 24px 0 0 0;
     padding: 24px;
-    height: 180px;
+    height: 150px;
 }
 
 .text > p {
@@ -177,7 +185,7 @@ button:hover {
     width: 0;
     height: 0;
     border-left: 70.7px solid transparent;
-    border-bottom: 70.7px solid pink;
+    border-bottom: 70.7px solid palevioletred;
     border-radius: 24px;
     margin: 35px 17.5px 0 0;
 }
@@ -186,7 +194,7 @@ button:hover {
     width: 0;
     height: 0;
     border-right: 70.7px solid transparent;
-    border-bottom: 70.7px solid pink;
+    border-bottom: 70.7px solid palevioletred;
     border-radius: 24px;
     margin: 35px 0 0 17.5px;
 }

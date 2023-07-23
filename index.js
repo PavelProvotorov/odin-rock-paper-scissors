@@ -9,22 +9,22 @@ const DIV_PLAYER_SCORE = document.getElementById("player-score")
 const DIV_COMPUTER_SCORE = document.getElementById("computer-score")
 
 const ROCK = {
-    name: "ROCK",
+    name: "PURROCK",
     beats: [
-        "SCISSORS"
+        "HISSORS"
     ]
 };
 
 const PAPER = {
-    name: "PAPER",
+    name: "PAWPER",
     beats: [
-        "ROCK"
+        "PURROCK"
     ]
 };
 const SCISSORS = {
-    name: "SCISSORS",
+    name: "HISSORS",
     beats: [
-        "PAPER"
+        "PAWPER"
     ]
 };
 
@@ -50,15 +50,19 @@ function playRound(option_a, option_b){
 };
 
 function compareOptions(option_a, option_b){
+    console.log("--------------------")
+    console.log(option_a)
+    console.log(option_b)
+
     const outcome = option_a.beats.includes(option_b.name)
     if (option_a === option_b){
-        return "DRAW"
+        return "DRAW /ᐠ-ꞈ-ᐟ\\"
     } else if (outcome === true) {
         player_score++
-        return "PLAYER WON"
+        return "HOUSE CAT WON /ᐠ｡ﻌ｡ᐟ\\"
     } else if (outcome === false) {
         computer_score++
-        return "COMPUTER WON"
+        return "STRAY CAT WON /ᐠ｡ꞈ｡ᐟ\\"
     } else {
         return "ERROR"
     };
@@ -76,9 +80,9 @@ function updateText(outcome){
     if (outcome === "RESTART"){
         DIV_TEXT_OUTPUT.textContent = "CHOOSE YOUR OPTION"
     } else if (player_score >= max_score){
-        DIV_TEXT_OUTPUT.textContent = outcome + " THIS GAME!" + "\n\nCLICK ANY OPTION TO PLAY AGAIN"
+        DIV_TEXT_OUTPUT.textContent = "✧･ﾟ" + "HOUSE CAT WON" + " THIS GAME!" + "ﾟ･✧" + "\n\nCLICK ANY OPTION TO PLAY AGAIN" 
     } else if (computer_score >= max_score){ 
-        DIV_TEXT_OUTPUT.textContent = outcome + " THIS GAME!" + "\n\nCLICK ANY OPTION TO PLAY AGAIN"
+        DIV_TEXT_OUTPUT.textContent = "*･ﾟ" + "STRAY CAT WON" + " THIS GAME!" + "･ﾟ*" +  "\n\nCLICK ANY OPTION TO PLAY AGAIN"
     } else {
         DIV_TEXT_OUTPUT.textContent = player_choice.name + " VS " + computer_choice.name + "\n" + "\n" + outcome
     }
