@@ -1,5 +1,3 @@
-console.log("Script started...")
-
 // VARIABLES
 const BUTTON_ROCK = document.getElementById("rock")
 const BUTTON_PAPER = document.getElementById("paper")
@@ -50,10 +48,6 @@ function playRound(option_a, option_b){
 };
 
 function compareOptions(option_a, option_b){
-    console.log("--------------------")
-    console.log(option_a)
-    console.log(option_b)
-
     const outcome = option_a.beats.includes(option_b.name)
     if (option_a === option_b){
         return "DRAW /ᐠ-ꞈ-ᐟ\\"
